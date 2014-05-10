@@ -2,7 +2,7 @@
 
 Install script.
 
-```console
+```
 $ mkdir -p ~/.phpenv/plugins/php-build/share/php-build/before-install.d/
 
 $ wget https://raw.githubusercontent.com/ngyuki/php-build-apxs2/master/patch-apxs2.sh \
@@ -13,14 +13,14 @@ $ chmod +x ~/.phpenv/plugins/php-build/share/php-build/before-install.d/patch-ap
 
 Fix definitions.
 
-```console
+```
 $ sed -i -e '/^install_package /iwith_apxs2 ""' -e '/^with_apxs2 /d' \
   ~/.phpenv/plugins/php-build/share/php-build/definitions/5.5.12
 ```
 
 Or, fix `default_configure_options` (enable to any versions).
 
-```console
+```
 $ echo --with-apxs2 >> ~/.phpenv/plugins/php-build/share/php-build/default_configure_options
 ```
 
